@@ -157,9 +157,9 @@
 <nav>
   <a class="nav-logo" href="#home" id="nav-logo">&#9670; Darouz 1970</a>
   <div class="nav-links">
-    <a href="#menu" id="nav-menu">Menu</a>
+    <a href="order.html" id="nav-menu">Menu</a>
     <a href="#story" id="nav-story">Our Story</a>
-    <a href="#order" id="nav-order">Order</a>
+    
     <a href="gallery.html" id="nav-gallery">Gallery</a>
   </div>
 </nav>
@@ -279,23 +279,18 @@
   </div>
 </section>
 
-<section id="order">
+<section id="contact">
   <div class="section-inner">
-    <div class="sec-eyebrow" id="order-eyebrow">Get in touch</div>
+    <div class="sec-eyebrow" id="order-eyebrow">Find us</div>
     <div class="contact-grid">
-      <div class="form-group">
-        <p id="order-title" style="font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);font-weight:400;margin-bottom:20px;">Place an order</p>
-        <label class="field-label" id="label-name">Your name</label>
-        <input class="form-input" type="text" id="input-name" placeholder="e.g. Ahmad"/>
-        <label class="field-label" id="label-contact" style="margin-top:8px;">Phone or email</label>
-        <input class="form-input" type="text" id="input-contact" placeholder="+963 or your email"/>
-        <label class="field-label" id="label-order" style="margin-top:8px;">Your order</label>
-        <textarea class="form-textarea" id="input-order" placeholder="e.g. 2x Labneh Darouz, 1x Sujuk..."></textarea>
-        <button class="send-btn" id="send-btn" onclick="sendWhatsApp()">Send order</button>
+      <div>
+        <p id="order-title" style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:400;margin-bottom:20px;">Ready to order?</p>
+        <p style="font-size:13px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;" id="order-sub">Browse our full menu and build your order — we'll receive it directly on WhatsApp.</p>
+        <a href="order.html" style="display:inline-block;background:var(--amber);color:#1a0a00;text-decoration:none;border-radius:8px;padding:13px 32px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-family:'Lato',sans-serif;transition:background 0.2s;" id="order-cta-btn">Order now</a>
       </div>
       <div class="info-col">
         <div class="info-col-title" id="find-title">Find us</div>
-        <div class="info-row"><div class="info-icon">&#128205;</div><div><div class="info-label" id="label-addr">Address</div><div class="info-val" id="val-addr"><a href="https://www.google.com/maps?q=35.517461,35.774348" target="_blank" style="color:#c8a870;text-decoration:none;border-bottom:0.5px solid #c8a87060;">Opposite Bemo Bank, Adhar 8<br>Latakia, Syria ↗</a></div></div></div>
+        <div class="info-row"><div class="info-icon">&#128205;</div><div><div class="info-label" id="label-addr">Address</div><div class="info-val" id="val-addr"><a href="https://www.google.com/maps?q=35.517461,35.774348" target="_blank" style="color:#c8a870;text-decoration:none;border-bottom:0.5px solid #c8a87060;">Opposite Bemo Bank, Adhar 8<br>Latakia, Syria &#8599;</a></div></div></div>
         <div class="info-row"><div class="info-icon">&#128222;</div><div><div class="info-label" id="label-phone">Phone</div><div class="info-val"><a href="tel:+963982050537" style="color:#c8a870;text-decoration:none;">+963 982 050 537</a></div></div></div>
         <div class="info-row"><div class="info-icon">&#9200;</div><div><div class="info-label" id="label-hours">Hours</div><div class="info-val" id="val-hours">Always open <span class="open-pill" id="pill-open">24/7</span></div></div></div>
         <div class="info-row"><div class="info-icon">&#128172;</div><div><div class="info-label" id="label-social">Social</div><div class="info-val"><a href="https://www.facebook.com/profile.php?id=61573159510895" target="_blank" style="color:#c8a870;text-decoration:none;" id="val-social">Facebook &#8594;</a></div></div></div>
@@ -312,7 +307,7 @@
 <script>
 const T = {
   en: {
-    'nav-logo':'◆ Darouz 1970','nav-menu':'Menu','nav-story':'Our Story','nav-order':'Order','nav-gallery':'Gallery',
+    'nav-logo':'◆ Darouz 1970','nav-menu':'Menu','nav-story':'Our Story','nav-gallery':'Gallery',
     'hero-badge':'Family owned since 1970','hero-name':'Darouz',
     'hero-sub':'"Built by family, shared with our community since 1970."',
     'hero-stamp':'Est. 1970 · Latakia → Your neighborhood',
@@ -368,7 +363,7 @@ const T = {
     'order-eyebrow':'Get in touch','order-title':'Place an order',
     'label-name':'Your name','label-contact':'Phone or email','label-order':'Your order',
     'input-name':'e.g. Ahmad','input-contact':'+963 or your email','input-order':'e.g. 2x Labneh Darouz, 1x Sujuk...',
-    'send-btn':'Send order','find-title':'Find us','label-addr':'Address',
+    'send-btn':'Send order','find-title':'Find us','order-eyebrow':'Find us','order-title':'Ready to order?','order-sub':'Browse our full menu and build your order — we\'ll receive it directly on WhatsApp.','order-cta-btn':'Order now','label-addr':'Address',
     'val-addr':'<a href="https://www.google.com/maps?q=35.517461,35.774348" target="_blank" style="color:#c8a870;text-decoration:none;border-bottom:0.5px solid #c8a87060;">Opposite Bemo Bank, Adhar 8<br>Latakia, Syria ↗</a>',
     'label-phone':'Phone','label-hours':'Hours','val-hours':'Always open',
     'pill-open':'24/7','label-social':'Social','val-social':'Facebook →',
@@ -376,7 +371,7 @@ const T = {
     'footer-tag':'Built by family, shared with our community'
   },
   ar: {
-    'nav-logo':'◆ دروز ١٩٧٠','nav-menu':'القائمة','nav-story':'قصتنا','nav-order':'اطلب','nav-gallery':'المعرض',
+    'nav-logo':'◆ دروز ١٩٧٠','nav-menu':'القائمة','nav-story':'قصتنا','nav-gallery':'المعرض',
     'hero-badge':'عائلي منذ ١٩٧٠','hero-name':'دروز',
     'hero-sub':'"السندويشة الدروزية هي نفسا"',
     'hero-stamp':'منذ ١٩٧٠ · اللاذقية ← حيّك',
@@ -432,7 +427,7 @@ const T = {
     'order-eyebrow':'تواصل معنا','order-title':'اطلب الآن',
     'label-name':'اسمك','label-contact':'هاتف أو إيميل','label-order':'طلبك',
     'input-name':'مثال: أحمد','input-contact':'+963 أو إيميلك','input-order':'مثال: ٢ لبنة دروزية، ١ سجق...',
-    'send-btn':'أرسل الطلب','find-title':'وين نحنا','label-addr':'العنوان',
+    'send-btn':'أرسل الطلب','find-title':'وين نحنا','order-eyebrow':'تواصل معنا','order-title':'جاهز تطلب؟','order-sub':'تصفح قائمتنا الكاملة وابنِ طلبك — سيصلنا مباشرة على واتساب.','order-cta-btn':'اطلب الآن','label-addr':'العنوان',
     'val-addr':'<a href="https://www.google.com/maps?q=35.517461,35.774348" target="_blank" style="color:#c8a870;text-decoration:none;border-bottom:0.5px solid #c8a87060;">آذار مقابل بنك بيمو ٨<br>اللاذقية، سوريا ↗</a>',
     'label-phone':'الهاتف','label-hours':'أوقات العمل','val-hours':'مفتوح دايماً',
     'pill-open':'٢٤/٧','label-social':'تواصل اجتماعي','val-social':'فيسبوك ←',
