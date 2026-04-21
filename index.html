@@ -12,6 +12,8 @@
     --amber: #f0a030; --amber-dim: #a06018; --gold: #f0c060;
     --text: #e0cca0; --text-dim: #907050; --text-faint: #504030;
     --border: #2e1e0a; --border2: #3a2a14;
+    --red: #6b8f5e; --red-dim: #3d5235; --red-light: #84ab72;
+    --orange: #6b8f5e; --orange-light: #84ab72;
   }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: 'Lato', sans-serif; font-weight: 300; line-height: 1.7; }
@@ -23,6 +25,7 @@
   .lang-btn:hover:not(.active) { border-color: var(--amber-dim); color: var(--text-dim); }
   nav { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 14px 40px; background: #0c0904ee; border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
   .nav-logo { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--gold); letter-spacing: 0.06em; text-decoration: none; }
+  .nav-logo span { color: #84ab72; }
   body.ar .nav-logo { font-family: 'Noto Naskh Arabic', serif; font-size: 19px; letter-spacing: 0; }
   .nav-links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
   body.ar .nav-links { letter-spacing: 0; text-transform: none; font-size: 14px; }
@@ -34,7 +37,7 @@
   .hero-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 40px; }
   body.ar .hero-inner { flex-direction: row-reverse; }
   .hero-text { flex: 1; }
-  .hero-badge { display: inline-block; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); border: 0.5px solid #f0a03050; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+  .hero-badge { display: inline-block; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); border: 0.5px solid #84ab7280; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; background: #0e1a0a; color: #84ab72; }
   body.ar .hero-badge { letter-spacing: 0; text-transform: none; font-size: 13px; }
   .hero-name { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 400; color: var(--gold); line-height: 1.05; margin-bottom: 8px; }
   body.ar .hero-name { font-family: 'Noto Naskh Arabic', serif; font-size: 48px; }
@@ -51,7 +54,7 @@
   .section-inner { max-width: 900px; margin: 0 auto; padding: 48px 40px; }
   .sec-eyebrow { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
   body.ar .sec-eyebrow { letter-spacing: 0; text-transform: none; font-size: 14px; flex-direction: row-reverse; }
-  .sec-eyebrow::before { content: ''; display: block; width: 24px; height: 0.5px; background: var(--amber); opacity: 0.5; }
+  .sec-eyebrow::before { content: ''; display: block; width: 24px; height: 0.5px; background: #84ab72; opacity: 0.7; }
   .menu-categories { display: flex; flex-direction: column; gap: 36px; }
   .menu-cat-title { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); font-weight: 400; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 0.5px solid var(--border2); }
   body.ar .menu-cat-title { font-family: 'Noto Naskh Arabic', serif; text-align: right; }
@@ -79,7 +82,7 @@
   body.ar .tl-item.tl-left .tl-text, body.ar .tl-item.tl-right .tl-text { text-align: right; }
   .tl-img img { width: 100%; height: 260px; object-fit: cover; object-position: center center; border-radius: 6px; border: 0.5px solid var(--border2); display: block; }
   .tl-img.food img { object-position: center center; height: 220px; }
-  .img-caption { font-size: 10px; color: var(--text-faint); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px; }
+  .img-caption { font-size: 10px; color: #3d5235; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px; }
   body.ar .img-caption { letter-spacing: 0; text-transform: none; font-size: 12px; }
   .tl-right .img-caption { text-align: left; }
   .tl-year { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--amber); opacity: 0.6; font-weight: 400; margin-bottom: 4px; }
@@ -87,8 +90,8 @@
   body.ar .tl-heading { font-family: 'Noto Naskh Arabic', serif; font-size: 20px; }
   .tl-body { font-size: 13px; color: var(--text-dim); line-height: 1.8; }
   body.ar .tl-body { font-size: 15px; line-height: 2; }
-  .story-quote { border-left: 2px solid var(--amber); padding: 14px 0 14px 24px; margin-top: 48px; border-radius: 0; }
-  body.ar .story-quote { border-left: none; border-right: 2px solid var(--amber); padding: 14px 24px 14px 0; text-align: right; }
+  .story-quote { border-left: 2px solid #6b8f5e; padding: 14px 0 14px 24px; margin-top: 48px; border-radius: 0; }
+  body.ar .story-quote { border-left: none; border-right: 2px solid #6b8f5e; padding: 14px 24px 14px 0; text-align: right; }
   .story-quote p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: var(--gold); line-height: 1.5; }
   body.ar .story-quote p { font-family: 'Noto Naskh Arabic', serif; font-style: normal; font-size: 20px; }
   .story-quote cite { display: block; margin-top: 8px; font-size: 11px; color: var(--amber-dim); letter-spacing: 0.08em; text-transform: uppercase; font-style: normal; }
@@ -121,14 +124,14 @@
   .info-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 0.5px solid var(--border); }
   body.ar .info-row { flex-direction: row-reverse; }
   .info-row:last-child { border-bottom: none; }
-  .info-icon { color: var(--amber); font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+  .info-icon { font-size: 15px; margin-top: 1px; flex-shrink: 0; color: #84ab72; }
   .info-label { font-size: 10px; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
   body.ar .info-label { letter-spacing: 0; text-transform: none; font-size: 12px; text-align: right; }
   .info-val { font-size: 13px; color: #c8a870; line-height: 1.6; }
   body.ar .info-val { font-size: 15px; text-align: right; }
-  .open-pill { display: inline-block; font-size: 9px; background: #0a2010; color: #60c870; padding: 2px 8px; border-radius: 8px; border: 0.5px solid #60c87040; margin-left: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .open-pill { display: inline-block; font-size: 9px; background: #0e1a0a; color: #84ab72; padding: 2px 8px; border-radius: 8px; border: 0.5px solid #84ab7240; margin-left: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
   body.ar .open-pill { margin-left: 0; margin-right: 6px; letter-spacing: 0; text-transform: none; font-size: 11px; }
-  footer { background: #0a0804; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--text-faint); letter-spacing: 0.04em; border-top: 0.5px solid var(--border); flex-wrap: wrap; gap: 8px; }
+  footer { background: #0a0804; border-top: 1px solid #0e1a0a !important; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--text-faint); letter-spacing: 0.04em; border-top: 0.5px solid var(--border); flex-wrap: wrap; gap: 8px; }
   body.ar footer { flex-direction: row-reverse; letter-spacing: 0; font-size: 13px; }
   @media (max-width: 680px) {
     nav, .lang-bar { padding: 12px 20px; }
@@ -145,6 +148,13 @@
     .contact-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; text-align: center; }
   }
+
+  
+
+  /* LEAF DECORATIONS */
+  .leaves-corner-wrap { position: relative; }
+  .leaf-hanging-left { position: absolute; top: 0; left: -10px; opacity: 0.65; z-index: 1; pointer-events: none; }
+  .leaf-hanging-right { position: absolute; top: 0; right: -10px; opacity: 0.65; z-index: 1; pointer-events: none; transform: scaleX(-1); }
 </style>
 </head>
 <body>
@@ -164,14 +174,8 @@
   </div>
 </nav>
 
-<div class="drip" style="background:#0c0904;">
-  <svg viewBox="0 0 1200 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,0 Q80,0 110,12 Q140,22 180,12 Q230,0 290,0 Q360,0 400,14 Q430,22 470,12 Q520,0 600,0 Q680,0 720,16 Q750,22 800,10 Q860,0 940,0 Q1010,0 1050,13 Q1080,22 1120,10 Q1160,0 1200,0 L1200,0 L0,0 Z" fill="#f0a030" opacity="0.75"/>
-  </svg>
-</div>
-
-<div id="home">
-  <div class="hero-inner">
+<div id="home" style="position:relative;">
+      <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-badge" id="hero-badge">Family owned since 1970</div>
       <div class="hero-name" id="hero-name">Darouz</div>
@@ -188,16 +192,17 @@
   </div>
 </div>
 
+
 <section id="cta" style="border-bottom:0.5px solid var(--border);">
   <div style="max-width:900px;margin:0 auto;padding:56px 40px;text-align:center;">
     <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;" id="cta-eyebrow">Now open for orders</div>
     <h2 id="cta-heading" style="font-family:'Playfair Display',serif;font-size:36px;font-weight:400;color:var(--gold);margin-bottom:12px;line-height:1.2;">What are you having today?</h2>
     <p id="cta-sub" style="font-size:14px;color:var(--text-dim);margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.7;">26 sandwiches, breakfast to sweets. Build your order and we'll get it ready.</p>
-    <a href="order.html" id="cta-btn" style="display:inline-block;background:var(--amber);color:#1a0a00;text-decoration:none;border-radius:8px;padding:16px 48px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-family:'Lato',sans-serif;transition:background 0.2s;">Order now</a>
+    <a href="order.html" id="cta-btn" style="display:inline-block;background:linear-gradient(135deg,#4a6b3e,#3d5235);color:#fff5ee;text-decoration:none;border-radius:8px;padding:16px 48px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-family:'Lato',sans-serif;transition:opacity 0.2s;">Order now</a>
     <div style="margin-top:20px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;">
-      <span style="font-size:11px;color:var(--text-faint);">&#9679; Breakfast</span>
-      <span style="font-size:11px;color:var(--text-faint);">&#9679; Lunch</span>
-      <span style="font-size:11px;color:var(--text-faint);">&#9679; Sweets</span>
+      <span style="font-size:11px;color:#84ab72;">&#9679; Breakfast</span>
+      <span style="font-size:11px;color:#6b8f5e;">&#9679; Lunch</span>
+      <span style="font-size:11px;color:#6b8f5e;">&#9679; Sweets</span>
     </div>
   </div>
 </section>
@@ -242,15 +247,23 @@
     <div class="contact-grid">
       <div>
         <p id="order-title" style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:400;margin-bottom:12px;">Come visit us</p>
-        <p id="order-sub" style="font-size:13px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;">We're in the heart of Latakia, opposite Bemo Bank. Drop by anytime — we're always open.</p>
-        <a href="order.html" style="display:inline-block;background:var(--amber);color:#1a0a00;text-decoration:none;border-radius:8px;padding:12px 28px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-family:'Lato',sans-serif;" id="order-cta-btn">Order now &#8594;</a>
+        <p id="order-sub" style="font-size:13px;color:var(--text-dim);line-height:1.8;">We're in the heart of Latakia, opposite Bemo Bank. Drop by anytime — we're always open.</p>
       </div>
       <div class="info-col">
         <div class="info-col-title" id="find-title">Find us</div>
-        <div class="info-row"><div class="info-icon">&#128205;</div><div><div class="info-label" id="label-addr">Address</div><div class="info-val" id="val-addr"><a href="https://www.google.com/maps?q=35.517461,35.774348" target="_blank" style="color:#c8a870;text-decoration:none;border-bottom:0.5px solid #c8a87060;">Opposite Bemo Bank, Adhar 8<br>Latakia, Syria &#8599;</a></div></div></div>
+        <div class="info-row"><div class="info-icon">&#128205;</div><div><div class="info-label" id="label-addr">Address</div><div class="info-val" id="val-addr"><a href="https://www.google.com/maps?q=35.517461,35.774348" target="_blank" style="color:#c8a870;text-decoration:none;border-bottom:0.5px solid #c8a87060;">Opposite Bemo Bank, 8th Azar<br>Latakia, Syria &#8599;</a></div></div></div>
         <div class="info-row"><div class="info-icon">&#128222;</div><div><div class="info-label" id="label-phone">Phone</div><div class="info-val"><a href="tel:+963982050537" style="color:#c8a870;text-decoration:none;">+963 982 050 537</a></div></div></div>
         <div class="info-row"><div class="info-icon">&#9200;</div><div><div class="info-label" id="label-hours">Hours</div><div class="info-val" id="val-hours">Always open <span class="open-pill" id="pill-open">24/7</span></div></div></div>
-        <div class="info-row"><div class="info-icon">&#128172;</div><div><div class="info-label" id="label-social">Social</div><div class="info-val"><a href="https://www.facebook.com/profile.php?id=61573159510895" target="_blank" style="color:#c8a870;text-decoration:none;" id="val-social">Facebook &#8594;</a></div></div></div>
+        <div class="info-row"><div class="info-icon">&#128172;</div><div><div class="info-label" id="label-social">Social</div><div class="info-val" style="display:flex;gap:14px;align-items:center;margin-top:4px;">
+  <a href="https://www.facebook.com/profile.php?id=61573159510895" target="_blank" aria-label="Facebook" style="display:flex;align-items:center;gap:6px;color:#c8a870;text-decoration:none;font-size:12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="#c8a870" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+    Facebook
+  </a>
+  <a href="https://www.instagram.com/darouz_1970" target="_blank" aria-label="Instagram" style="display:flex;align-items:center;gap:6px;color:#c8a870;text-decoration:none;font-size:12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="#c8a870" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    Instagram
+  </a>
+</div></div></div>
       </div>
     </div>
   </div>
@@ -321,7 +334,7 @@ const T = {
     'label-name':'Your name','label-contact':'Phone or email','label-order':'Your order',
     'input-name':'e.g. Ahmad','input-contact':'+963 or your email','input-order':'e.g. 2x Labneh Darouz, 1x Sujuk...',
     'send-btn':'Send order','find-title':'Find us','cta-eyebrow':'Now open for orders','cta-heading':'What are you having today?','cta-sub':'26 sandwiches, breakfast to sweets. Build your order and we\'ll get it ready.','cta-btn':'Order now','order-eyebrow':'Find us','order-title':'Come visit us','order-sub':'We\'re in the heart of Latakia, opposite Bemo Bank. Drop by anytime — we\'re always open.','order-cta-btn':'Order now →','label-addr':'Address',
-    'val-addr':'<a href="https://www.google.com/maps?q=35.517461,35.774348" target="_blank" style="color:#c8a870;text-decoration:none;border-bottom:0.5px solid #c8a87060;">Opposite Bemo Bank, Adhar 8<br>Latakia, Syria ↗</a>',
+    'val-addr':'<a href="https://www.google.com/maps?q=35.517461,35.774348" target="_blank" style="color:#c8a870;text-decoration:none;border-bottom:0.5px solid #c8a87060;">Opposite Bemo Bank, 8th Azar<br>Latakia, Syria ↗</a>',
     'label-phone':'Phone','label-hours':'Hours','val-hours':'Always open',
     'pill-open':'24/7','label-social':'Social','val-social':'Facebook →',
     'footer-copy':'© 2025 Darouz 1970 — Latakia, Syria',
@@ -466,6 +479,13 @@ function setLang(lang) {
 #scroll-top:hover { background: var(--gold); }
 #scroll-top.visible { display: flex; }
 body.ar #scroll-top { right: auto; left: 32px; }
+
+  
+
+  /* LEAF DECORATIONS */
+  .leaves-corner-wrap { position: relative; }
+  .leaf-hanging-left { position: absolute; top: 0; left: -10px; opacity: 0.65; z-index: 1; pointer-events: none; }
+  .leaf-hanging-right { position: absolute; top: 0; right: -10px; opacity: 0.65; z-index: 1; pointer-events: none; transform: scaleX(-1); }
 </style>
 <script>
 window.addEventListener('scroll', function() {

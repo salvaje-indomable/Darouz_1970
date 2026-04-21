@@ -45,7 +45,7 @@
   .page-header-inner { max-width: 900px; margin: 0 auto; }
   .sec-eyebrow { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
   body.ar .sec-eyebrow { letter-spacing: 0; text-transform: none; font-size: 14px; flex-direction: row-reverse; }
-  .sec-eyebrow::before { content: ''; display: block; width: 24px; height: 0.5px; background: var(--amber); opacity: 0.5; }
+  .sec-eyebrow::before { content: ''; display: block; width: 24px; height: 0.5px; background: #84ab72; opacity: 0.7; }
   .page-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; color: var(--gold); }
   body.ar .page-title { font-family: 'Noto Naskh Arabic', serif; text-align: right; }
   .page-sub { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
@@ -147,7 +147,7 @@
   /* SCROLL TOP */
   #scroll-top { position: fixed; bottom: 32px; left: 32px; z-index: 998; width: 44px; height: 44px; border-radius: 50%; background: var(--amber); color: #1a0a00; border: none; font-size: 22px; cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1; }
   #scroll-top.visible { display: flex; }
-  #scroll-top:hover { background: var(--gold); }
+  #scroll-top:hover { background: #84ab72; }
 
   /* FOOTER */
   footer { background: #0a0804; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--text-faint); letter-spacing: 0.04em; border-top: 0.5px solid var(--border); flex-wrap: wrap; gap: 8px; }
@@ -164,6 +164,10 @@
     .cart-nav-btn { display: flex; }
     footer { flex-direction: column; text-align: center; }
   }
+
+  .leaf-divider { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 8px 0; opacity: 0.45; }
+  .leaf-divider::before, .leaf-divider::after { content: ''; flex: 1; height: 0.5px; background: #3d5235; }
+  .section-leaf { opacity: 0.18; }
 </style>
 </head>
 <body>
@@ -186,15 +190,9 @@
   </div>
 </nav>
 
-<div class="drip" style="background:#0c0904;">
-  <svg viewBox="0 0 1200 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,0 Q80,0 110,12 Q140,22 180,12 Q230,0 290,0 Q360,0 400,14 Q430,22 470,12 Q520,0 600,0 Q680,0 720,16 Q750,22 800,10 Q860,0 940,0 Q1010,0 1050,13 Q1080,22 1120,10 Q1160,0 1200,0 L1200,0 L0,0 Z" fill="#f0a030" opacity="0.75"/>
-  </svg>
-</div>
-
 <div class="page-header">
   <div class="page-header-inner">
-    <div class="sec-eyebrow" id="page-eyebrow">Order</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;"><div class="sec-eyebrow" style="margin-bottom:0;" id="page-eyebrow">Order</div></div>
     <div class="page-title" id="page-title">Build your order</div>
     <p class="page-sub" id="page-sub">Pick your items, add special requests, and send directly via WhatsApp.</p>
   </div>
