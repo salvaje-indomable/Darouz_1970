@@ -30,7 +30,7 @@
   body.ar .nav-logo { font-family: 'Noto Naskh Arabic', serif; font-size: 19px; letter-spacing: 0; }
 
   /* DRIP */
-  .drip { width: 100%; line-height: 0; background: #0c0904; }
+  .drip { width: 100%; height: 22px; overflow: hidden; background: #0c0904; }
   .drip svg { width: 100%; display: block; }
 
   /* BACK BAR */
@@ -191,12 +191,6 @@
   </svg>
 </div>
 
-<div class="back-bar">
-  <a href="index.html" class="back-link" id="back-link">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back to home
-  </a>
-</div>
 
 <div class="cat-tabs" id="cat-tabs">
   <button class="cat-tab active" onclick="scrollToCat('breakfast')" id="tab-breakfast">Breakfast</button>
@@ -267,7 +261,7 @@
 <script>
 const MENU = {
   breakfast: [
-    {id:'b1',en:{name:'Labneh Darouz',desc:"Za'atar, tomato, cucumber"},ar:{name:'لبنة دروزية',desc:'زعتر، بندورة، خيار'},icon:'🫙',img:'labneh_darouz_card.jpg'},
+    {id:'b1',en:{name:'Labneh Darouz',desc:"Za'atar, tomato, cucumber"},ar:{name:'لبنة دروزية',desc:'زعتر، بندورة، خيار'},icon:'🫙',img:'labneh_darouz_card.png'},
     {id:'b2',en:{name:'Cheese',desc:'Classic white cheese sandwich'},ar:{name:'جبنة',desc:'ساندويش جبنة بيضاء كلاسيك'},icon:'🧀',img:'cheese_card.jpg'},
     {id:'b3',en:{name:'Kashqawan cheese',desc:'Melted yellow cheese'},ar:{name:'قشقوان',desc:'جبنة صفراء مذابة'},icon:'🧀'},
     {id:'b4',en:{name:'White cheese',desc:'Soft fresh white cheese'},ar:{name:'جبنة بيضا',desc:'جبنة بيضاء طازجة'},icon:'🧀'},
