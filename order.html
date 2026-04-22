@@ -267,8 +267,8 @@
 <script>
 const MENU = {
   breakfast: [
-    {id:'b1',en:{name:'Labneh Darouz',desc:"Za'atar, tomato, cucumber"},ar:{name:'لبنة دروزية',desc:'زعتر، بندورة، خيار'},icon:'🫙'},
-    {id:'b2',en:{name:'Cheese',desc:'Classic white cheese sandwich'},ar:{name:'جبنة',desc:'ساندويش جبنة بيضاء كلاسيك'},icon:'🧀'},
+    {id:'b1',en:{name:'Labneh Darouz',desc:"Za'atar, tomato, cucumber"},ar:{name:'لبنة دروزية',desc:'زعتر، بندورة، خيار'},icon:'🫙',img:'labneh_darouz_card.jpg'},
+    {id:'b2',en:{name:'Cheese',desc:'Classic white cheese sandwich'},ar:{name:'جبنة',desc:'ساندويش جبنة بيضاء كلاسيك'},icon:'🧀',img:'cheese_card.jpg'},
     {id:'b3',en:{name:'Kashqawan cheese',desc:'Melted yellow cheese'},ar:{name:'قشقوان',desc:'جبنة صفراء مذابة'},icon:'🧀'},
     {id:'b4',en:{name:'White cheese',desc:'Soft fresh white cheese'},ar:{name:'جبنة بيضا',desc:'جبنة بيضاء طازجة'},icon:'🧀'},
     {id:'b5',en:{name:'Seasoned labneh',desc:'Mint, tomato, cucumber, olives'},ar:{name:'لبنة مدعبلة',desc:'نعنع، بندورة، خيار، زيتون'},icon:'🫙'},
@@ -320,7 +320,7 @@ function renderMenus() {
       const qty = cart[item.id] ? cart[item.id].qty : 0;
       grid.innerHTML += `
         <div class="item-card ${qty>0?'in-cart':''}" id="card-${item.id}">
-          <div class="item-img"><img src="sandwich_card.jpg" alt="${t.name}" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+          <div class="item-img"><img src="${item.img || 'sandwich_card.jpg'}" alt="${t.name}" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
           <div class="item-body">
             <div class="item-name">${t.name}</div>
             <div class="item-desc">${t.desc}</div>
