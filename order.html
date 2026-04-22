@@ -145,7 +145,28 @@
   body.ar footer { flex-direction: row-reverse; letter-spacing: 0; font-size: 13px; }
 
   @media (max-width: 680px) {
-    nav, .lang-bar, .back-bar { padding-left: 20px; padding-right: 20px; }
+    nav, .lang-bar, .back-bar { padding-left: 16px; padding-right: 16px; }
+    .cat-tabs { padding: 14px 16px 0; gap: 6px; }
+    .cat-tab { font-size: 10px; padding: 4px 12px; }
+    .menu-area { padding: 20px 16px 140px; }
+    .items-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .item-img { height: 90px; font-size: 28px; }
+    .item-body { padding: 10px 10px; }
+    .item-name { font-size: 12px; }
+    .item-desc { font-size: 10px; }
+    .add-btn { font-size: 10px; padding: 6px 12px; }
+    .qty-btn { width: 24px; height: 24px; font-size: 14px; }
+    .qty-num { font-size: 12px; }
+    .cart-bubble { bottom: 20px; right: 16px; }
+    body.ar .cart-bubble { right: auto; left: 16px; }
+    .bubble-btn { padding: 12px 18px; font-size: 13px; }
+    .cart-drawer { max-height: 90vh; }
+    .drawer-header { padding: 14px 16px 10px; }
+    .drawer-body { padding: 12px 16px; }
+    .drawer-footer { padding: 10px 16px 24px; }
+    .drawer-fields { grid-template-columns: 1fr; gap: 6px; }
+    footer { flex-direction: column; text-align: center; padding: 14px 16px; }
+  }
     .cat-tabs, .menu-area { padding-left: 20px; padding-right: 20px; }
     .cart-bubble { bottom: 20px; right: 20px; }
     body.ar .cart-bubble { right: auto; left: 20px; }
