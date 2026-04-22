@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darouz 1970 — Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #111009; --bg2: #1a1208;
+    --amber: #f0a030; --amber-dim: #a06018; --gold: #f0c060;
+    --text: #e0cca0; --text-dim: #907050; --text-faint: #504030;
+    --border: #2e1e0a; --border2: #3a2a14;
+    --red: #6b8f5e; --red-dim: #3d5235; --red-light: #84ab72;
+    --orange: #6b8f5e; --orange-light: #84ab72;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Lato', sans-serif; font-weight: 300; line-height: 1.7; }
+  body.ar { font-family: 'Noto Naskh Arabic', serif; }
+
+  /* LANG BAR */
+  .lang-bar { background: #0a0804; border-bottom: 0.5px solid var(--border); padding: 6px 40px; display: flex; justify-content: flex-end; gap: 4px; }
+  body.ar .lang-bar { justify-content: flex-start; }
+  .lang-btn { background: none; border: 0.5px solid var(--border2); color: var(--text-faint); font-size: 11px; padding: 3px 12px; border-radius: 20px; cursor: pointer; font-family: inherit; letter-spacing: 0.04em; transition: all 0.2s; }
+  .lang-btn.active { background: var(--amber); color: #1a0a00; border-color: var(--amber); font-weight: 700; }
+  .lang-btn:hover:not(.active) { border-color: var(--amber-dim); color: var(--text-dim); }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 14px 40px; background: #0c0904ee; border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 17px; color: #f5c842; letter-spacing: 0.06em; text-decoration: none; text-shadow: 0 0 4px #f5c84260, 0 0 10px #e8a82040, 0 0 18px #c0701025; }
+  body.ar .nav-logo { font-family: 'Noto Naskh Arabic', serif; font-size: 19px; letter-spacing: 0; }
+  .nav-links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; flex-wrap: wrap; }
+  body.ar .nav-links { letter-spacing: 0; text-transform: none; font-size: 14px; }
+  .nav-links a { color: var(--amber-dim); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--amber); }
+  .nav-links a.active { color: var(--amber); }
+
+  /* DRIP */
+  .drip { width: 100%; line-height: 0; background: #0c0904; }
+  .drip svg { width: 100%; display: block; }
+
+  /* HEADER */
+  .gallery-header { background: #0c0904; padding: 48px 40px 40px; border-bottom: 0.5px solid var(--border); max-width: 100%; }
+  .gallery-header-inner { max-width: 900px; margin: 0 auto; }
+  .sec-eyebrow { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  body.ar .sec-eyebrow { letter-spacing: 0; text-transform: none; font-size: 14px; flex-direction: row-reverse; }
+  .sec-eyebrow::before { content: ''; display: block; width: 24px; height: 0.5px; background: #84ab72; opacity: 0.7; }
+  .gallery-title { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--gold); line-height: 1.2; margin-bottom: 8px; }
+  body.ar .gallery-title { font-family: 'Noto Naskh Arabic', serif; text-align: right; }
+  .gallery-subtitle { font-size: 13px; color: var(--text-dim); }
+  body.ar .gallery-subtitle { text-align: right; }
+
+  /* FILTER TABS */
+  .filter-bar { max-width: 900px; margin: 0 auto; padding: 24px 40px 0; display: flex; gap: 8px; }
+  body.ar .filter-bar { flex-direction: row-reverse; }
+  .filter-btn { background: none; border: 0.5px solid var(--border2); color: var(--text-dim); font-size: 11px; padding: 5px 16px; border-radius: 20px; cursor: pointer; font-family: inherit; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.2s; }
+  body.ar .filter-btn { letter-spacing: 0; text-transform: none; font-size: 13px; }
+  .filter-btn.active { background: var(--amber); color: #1a0a00; border-color: var(--amber); font-weight: 700; }
+  .filter-btn:hover:not(.active) { border-color: var(--amber-dim); color: var(--text); }
+
+  /* MASONRY GRID */
+  .masonry-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 40px 64px; }
+  .masonry { columns: 3; column-gap: 12px; }
+  @media (max-width: 768px) { .masonry { columns: 2; column-gap: 10px; } }
+  @media (max-width: 480px) { .masonry { columns: 1; } }
+
+  .masonry-item { break-inside: avoid; margin-bottom: 12px; border-radius: 8px; overflow: hidden; border: 0.5px solid var(--border2); position: relative; cursor: pointer; }
+  .masonry-item:hover .item-overlay { opacity: 1; }
+  .masonry-item img { width: 100%; display: block; transition: transform 0.3s; }
+  .masonry-item:hover img { transform: scale(1.03); }
+
+  /* VIDEO ITEMS */
+  .masonry-item.video-item { background: var(--bg2); }
+  .video-thumb { width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative; background: #201610; }
+  .video-thumb iframe { width: 100%; height: 100%; border: none; display: block; }
+  .play-icon { position: absolute; width: 52px; height: 52px; border-radius: 50%; background: var(--amber); display: flex; align-items: center; justify-content: center; pointer-events: none; }
+  .play-icon::after { content: ''; border-left: 18px solid #1a0a00; border-top: 11px solid transparent; border-bottom: 11px solid transparent; margin-left: 4px; }
+
+  /* OVERLAY */
+  .item-overlay { position: absolute; inset: 0; background: #00000060; opacity: 0; transition: opacity 0.2s; display: flex; align-items: flex-end; }
+  .item-caption { padding: 12px 14px; font-size: 11px; color: #e0cca0; letter-spacing: 0.04em; text-transform: uppercase; }
+  body.ar .item-caption { letter-spacing: 0; text-transform: none; font-size: 12px; text-align: right; width: 100%; }
+
+  /* UPLOAD PLACEHOLDER */
+  .upload-placeholder { break-inside: avoid; margin-bottom: 12px; border-radius: 8px; border: 0.5px dashed var(--border2); background: var(--bg2); aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--text-faint); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .upload-icon { font-size: 28px; opacity: 0.4; }
+
+  /* LIGHTBOX */
+  .lightbox { display: none; position: fixed; inset: 0; background: #000000cc; z-index: 999; align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 6px; border: 0.5px solid var(--border2); }
+  .lightbox-close { position: absolute; top: 24px; right: 32px; font-size: 28px; color: var(--text-dim); cursor: pointer; background: none; border: none; line-height: 1; }
+  .lightbox-close:hover { color: var(--amber); }
+
+  /* SCROLL TOP */
+  #scroll-top { position: fixed; bottom: 32px; right: 32px; z-index: 998; width: 44px; height: 44px; border-radius: 50%; background: var(--amber); color: #1a0a00; border: none; font-size: 22px; cursor: pointer; display: none; align-items: center; justify-content: center; transition: background 0.2s; line-height: 1; }
+  #scroll-top:hover { background: #84ab72; }
+  #scroll-top.visible { display: flex; }
+  body.ar #scroll-top { right: auto; left: 32px; }
+
+  /* FOOTER */
+  footer { background: #0a0804; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--text-faint); letter-spacing: 0.04em; border-top: 0.5px solid var(--border); flex-wrap: wrap; gap: 8px; }
+  body.ar footer { flex-direction: row-reverse; letter-spacing: 0; font-size: 13px; }
+
+  @media (max-width: 680px) {
+    nav, .lang-bar { padding: 12px 16px; }
+    .nav-links { gap: 14px; font-size: 10px; }
+    .gallery-header { padding: 24px 16px; }
+    .gallery-title { font-size: 26px; }
+    .filter-bar { padding: 14px 16px 0; gap: 6px; }
+    .filter-btn { font-size: 10px; padding: 4px 12px; }
+    .masonry-wrap { padding: 20px 16px 60px; }
+    .masonry { columns: 2; column-gap: 8px; }
+    .masonry-item { margin-bottom: 8px; }
+    .item-caption { font-size: 9px; padding: 8px 10px; }
+    footer { flex-direction: column; text-align: center; padding: 14px 16px; }
+  }
+    .gallery-header { padding: 32px 20px; }
+    .filter-bar, .masonry-wrap { padding-left: 20px; padding-right: 20px; }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  .leaf-divider { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 8px 0; opacity: 0.45; }
+  .leaf-divider::before, .leaf-divider::after { content: ''; flex: 1; height: 0.5px; background: #3d5235; }
+  .section-leaf { opacity: 0.18; }
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+  <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">عربي</button>
+</div>
+
+<nav>
+  <a class="nav-logo" href="index.html" id="nav-logo">&#9670; Darouz 1970</a>
+  <div class="nav-links">
+    <a href="order.html" id="nav-menu">Order</a>
+    <a href="index.html#story" id="nav-story">Our Story</a>
+    <a href="gallery.html" class="active" id="nav-gallery">Gallery</a>
+  </div>
+</nav>
+
+<div class="gallery-header">
+  <div class="gallery-header-inner">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;"><div class="sec-eyebrow" style="margin-bottom:0;" id="gallery-eyebrow">Gallery</div></div>
+    <div class="gallery-title" id="gallery-title">Photos &amp; videos</div>
+    <p class="gallery-subtitle" id="gallery-subtitle">A look inside Darouz — the food, the family, the neighborhood.</p>
+  </div>
+</div>
+
+<!-- FILTER TABS -->
+<div class="filter-bar">
+  <button class="filter-btn active" id="filter-all" onclick="filterGallery('all')">All</button>
+  <button class="filter-btn" id="filter-photos" onclick="filterGallery('photos')">Photos</button>
+  <button class="filter-btn" id="filter-videos" onclick="filterGallery('videos')">Videos</button>
+</div>
+
+<!-- MASONRY GRID -->
+<div class="masonry-wrap">
+  <div class="masonry" id="masonry">
+
+    <!-- SHOP EXTERIOR PHOTOS -->
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_exterior_day.jpg" alt="Darouz storefront daytime"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e1">The shop — daytime</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_exterior_angle.jpg" alt="Darouz storefront angle"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e2">Corner view</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_exterior_night.jpg" alt="Darouz at night"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e3">The shop at night</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_interior_counter.jpg" alt="Interior counter"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e4">Behind the counter</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_counter_family.jpg" alt="Counter and family wall"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e5">The family wall</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_ceiling.jpg" alt="Shop ceiling lights"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e6">Warm lights above</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_inside_full.jpg" alt="Full interior view"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e7">Inside Darouz</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_night_front.jpg" alt="Night front view"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e8">Darouz after dark</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_1970_entrance.jpg" alt="1970 entrance"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e9">The 1970 entrance</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_neon_family.jpg" alt="Neon sign and family photos"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e10">Neon & family</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="shop_community_board.jpg" alt="Community board"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-e11">Our community</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="fresh_ingredients.jpg" alt="Fresh ingredients"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-s2">Fresh every morning</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="food_platter.jpg" alt="Darouz platter"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-s6">The Darouz platter</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="neon_platter.jpg" alt="Platters under the neon sign"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-s7">Fresh platters, Darouz style</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="son_counter.jpg" alt="Behind the counter"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-s1">Behind the counter</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="founders_early.jpg" alt="Early days"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-s3">The early days</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="founder_counter.jpg" alt="Second generation"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-s4">Second generation</div></div>
+    <div class="masonry-item photo-item" onclick="openLight(this)">
+      <img src="grandfather_portrait.jpg" alt="The founder"/>
+      <div class="item-overlay"><div class="item-caption" id="cap-s5">The founder, 1970</div></div>
+    </div>
+    <!-- VIDEO PLACEHOLDER 1 -->
+    <div class="masonry-item video-item">
+      <div class="video-thumb" style="background:#1a1208;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;aspect-ratio:16/9;">
+        <div style="font-size:32px;opacity:0.3;">&#9654;</div>
+        <p style="font-size:11px;color:var(--text-faint);letter-spacing:0.06em;text-transform:uppercase;text-align:center;" id="vid-placeholder1">Add your video here —<br>paste a YouTube or Instagram link</p>
+      </div>
+    </div>
+
+    <!-- VIDEO PLACEHOLDER 2 -->
+    <div class="masonry-item video-item">
+      <div class="video-thumb" style="background:#1a1208;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;aspect-ratio:16/9;">
+        <div style="font-size:32px;opacity:0.3;">&#9654;</div>
+        <p style="font-size:11px;color:var(--text-faint);letter-spacing:0.06em;text-transform:uppercase;text-align:center;" id="vid-placeholder2">Add your video here —<br>paste a YouTube or Instagram link</p>
+      </div>
+    </div>
+
+    <!-- PHOTO PLACEHOLDERS -->
+    <div class="upload-placeholder">
+      <div class="upload-icon">&#43;</div>
+      <span id="ph1">Add photo</span>
+    </div>
+    <div class="upload-placeholder">
+      <div class="upload-icon">&#43;</div>
+      <span id="ph2">Add photo</span>
+    </div>
+    <div class="upload-placeholder">
+      <div class="upload-icon">&#43;</div>
+      <span id="ph3">Add photo</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLight()">
+  <button class="lightbox-close" onclick="closeLight()">&#10005;</button>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
+
+<footer>
+  <span id="footer-copy">&#169; 2025 Darouz 1970 &mdash; Latakia, Syria</span>
+  <span id="footer-tag">Built by family, shared with our community</span>
+</footer>
+
+<script>
+function openLight(el) {
+  const img = el.querySelector('img');
+  if (!img) return;
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLight() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLight(); });
+
+function filterGallery(type) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('filter-' + type).classList.add('active');
+  document.querySelectorAll('.masonry-item, .upload-placeholder').forEach(item => {
+    if (type === 'all') { item.style.display = ''; }
+    else if (type === 'photos') { item.style.display = item.classList.contains('photo-item') || item.classList.contains('upload-placeholder') ? '' : 'none'; }
+    else if (type === 'videos') { item.style.display = item.classList.contains('video-item') ? '' : 'none'; }
+  });
+}
+
+window.addEventListener('scroll', function() {
+  document.getElementById('scroll-top').classList.toggle('visible', window.scrollY > 400);
+});
+
+const T = {
+  en: {
+    'nav-logo':'◆ Darouz 1970','nav-menu':'Order','nav-story':'Our Story','nav-gallery':'Gallery',
+    'gallery-eyebrow':'Gallery','gallery-title':'Photos & videos',
+    'gallery-subtitle':'A look inside Darouz — the food, the family, the neighborhood.',
+    'filter-all':'All','filter-photos':'Photos','filter-videos':'Videos',
+    'cap-s1':'Behind the counter','cap-s2':'Fresh every morning','cap-s3':'The early days',
+    'cap-s4':'Second generation','cap-s5':'The founder, 1970','cap-s6':'The Darouz platter','cap-s7':'Fresh platters, Darouz style',
+    'vid-placeholder1':'Add your video here —\npaste a YouTube or Instagram link',
+    'vid-placeholder2':'Add your video here —\npaste a YouTube or Instagram link',
+    'ph1':'Add photo','ph2':'Add photo','ph3':'Add photo',
+    'footer-copy':'© 2025 Darouz 1970 — Latakia, Syria',
+    'footer-tag':'Built by family, shared with our community'
+  },
+  ar: {
+    'nav-logo':'◆ دروز ١٩٧٠','nav-menu':'اطلب','nav-story':'قصتنا','nav-gallery':'المعرض',
+    'gallery-eyebrow':'المعرض','gallery-title':'صور وفيديوهات',
+    'gallery-subtitle':'.نظرة من داخل دروز — الأكل، العيلة، والحي',
+    'filter-all':'الكل','filter-photos':'صور','filter-videos':'فيديوهات',
+    'cap-s1':'خلف الكاونتر','cap-s2':'طازج كل صباح','cap-s3':'البدايات',
+    'cap-s4':'الجيل الثاني','cap-s5':'المؤسس، ١٩٧٠','cap-s6':'طبق دروز','cap-s7':'أطباق طازجة على طريقة دروز',
+    'vid-placeholder1':'أضف فيديو هنا\nالصق رابط يوتيوب أو إنستغرام',
+    'vid-placeholder2':'أضف فيديو هنا\nالصق رابط يوتيوب أو إنستغرام',
+    'ph1':'أضف صورة','ph2':'أضف صورة','ph3':'أضف صورة',
+    'footer-copy':'© ٢٠٢٥ دروز ١٩٧٠ — اللاذقية، سوريا',
+    'footer-tag':'بنيناه بعيلة، شاركناه مع حيّنا'
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.body.classList.toggle('ar', lang === 'ar');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+  const t = T[lang];
+  Object.keys(t).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = t[id];
+  });
+}
+</script>
+</body>
+</html>
