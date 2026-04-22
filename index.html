@@ -24,9 +24,9 @@
   .lang-btn.active { background: var(--amber); color: #1a0a00; border-color: var(--amber); font-weight: 700; }
   .lang-btn:hover:not(.active) { border-color: var(--amber-dim); color: var(--text-dim); }
   nav { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 14px 40px; background: #0c0904ee; border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
-  .nav-logo { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--gold); letter-spacing: 0.06em; text-decoration: none; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 17px; color: #f5c842; letter-spacing: 0.06em; text-decoration: none; text-shadow: 0 0 4px #f5c84260, 0 0 10px #e8a82040, 0 0 18px #c0701025; }
   .nav-logo span { color: #84ab72; }
-  body.ar .nav-logo { font-family: 'Noto Naskh Arabic', serif; font-size: 19px; letter-spacing: 0; }
+  body.ar .nav-logo { font-family: 'Noto Naskh Arabic', serif; font-size: 19px; letter-spacing: 0; text-shadow: 0 0 4px #f5c84260, 0 0 10px #e8a82040, 0 0 18px #c0701025; }
   .nav-links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; flex-wrap: wrap; }
   body.ar .nav-links { letter-spacing: 0; text-transform: none; font-size: 14px; }
   .nav-links a { color: var(--amber-dim); text-decoration: none; transition: color 0.2s; }
@@ -195,6 +195,22 @@
   .leaves-corner-wrap { position: relative; }
   .leaf-hanging-left { position: absolute; top: 0; left: -10px; opacity: 0.65; z-index: 1; pointer-events: none; }
   .leaf-hanging-right { position: absolute; top: 0; right: -10px; opacity: 0.65; z-index: 1; pointer-events: none; transform: scaleX(-1); }
+
+  /* NEON 1970 */
+  .neon-1970 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f5c842;
+    text-shadow:
+      0 0 6px #f5c842,
+      0 0 12px #f5c842,
+      0 0 24px #e8a820,
+      0 0 40px #c07010;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    user-select: none;
+  }
 </style>
 </head>
 <body>
@@ -521,6 +537,22 @@ body.ar #scroll-top { right: auto; left: 32px; }
   .leaves-corner-wrap { position: relative; }
   .leaf-hanging-left { position: absolute; top: 0; left: -10px; opacity: 0.65; z-index: 1; pointer-events: none; }
   .leaf-hanging-right { position: absolute; top: 0; right: -10px; opacity: 0.65; z-index: 1; pointer-events: none; transform: scaleX(-1); }
+
+  /* NEON 1970 */
+  .neon-1970 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f5c842;
+    text-shadow:
+      0 0 6px #f5c842,
+      0 0 12px #f5c842,
+      0 0 24px #e8a820,
+      0 0 40px #c07010;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    user-select: none;
+  }
 </style>
 <script>
 window.addEventListener('scroll', function() {
