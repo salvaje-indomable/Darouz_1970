@@ -61,7 +61,7 @@
   /* ITEM CARD */
   .item-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 10px; overflow: hidden; transition: border-color 0.2s; display: flex; flex-direction: column; }
   .item-card.in-cart { border-color: var(--green); }
-  .item-img { width: 100%; height: 120px; background: var(--bg3); display: flex; align-items: center; justify-content: center; font-size: 36px; }
+  .item-img { width: 100%; height: 120px; overflow: hidden; }
   .item-body { padding: 12px 14px; flex: 1; display: flex; flex-direction: column; }
   body.ar .item-body { text-align: right; }
   .item-name { font-size: 13px; font-weight: 400; color: #e8c880; margin-bottom: 4px; line-height: 1.3; }
@@ -320,7 +320,7 @@ function renderMenus() {
       const qty = cart[item.id] ? cart[item.id].qty : 0;
       grid.innerHTML += `
         <div class="item-card ${qty>0?'in-cart':''}" id="card-${item.id}">
-          <div class="item-img">${item.icon}</div>
+          <div class="item-img"><img src="sandwich_card.jpg" alt="${t.name}" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
           <div class="item-body">
             <div class="item-name">${t.name}</div>
             <div class="item-desc">${t.desc}</div>
