@@ -290,12 +290,17 @@
 </div>
 
 
-<section id="cta" style="border-bottom:0.5px solid var(--border);">
-  <div style="max-width:900px;margin:0 auto;padding:56px 40px;text-align:center;">
+<section id="cta" style="position:relative;border-bottom:0.5px solid var(--border);overflow:hidden;min-height:480px;display:flex;align-items:center;">
+  <!-- Background photo -->
+  <div style="position:absolute;inset:0;background-image:url('interior_counter.jpg');background-size:cover;background-position:center center;"></div>
+  <!-- Dark overlay -->
+  <div style="position:absolute;inset:0;background:#000000cc;"></div>
+  <!-- Content -->
+  <div style="position:relative;z-index:2;width:100%;max-width:900px;margin:0 auto;padding:80px 40px;text-align:center;">
     <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;" id="cta-eyebrow">Now open for orders</div>
-    <h2 id="cta-heading" style="font-family:'Playfair Display',serif;font-size:36px;font-weight:400;color:var(--gold);margin-bottom:12px;line-height:1.2;">What are you having today?</h2>
-    <p id="cta-sub" style="font-size:14px;color:var(--text-dim);margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.7;">26 sandwiches, breakfast to sweets. Build your order and we'll get it ready.</p>
-    <a href="order.html" id="cta-btn" style="display:inline-block;background:linear-gradient(135deg,#3a5530,#2e3f25);color:#e8f0e0;text-decoration:none;border-radius:8px;padding:16px 48px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-family:'Lato',sans-serif;transition:opacity 0.2s;">Order now</a>
+    <h2 id="cta-heading" style="font-family:'Playfair Display',serif;font-size:44px;font-weight:400;color:#ffffff;margin-bottom:14px;line-height:1.2;">What are you having today?</h2>
+    <p id="cta-sub" style="font-size:15px;color:#ffffffaa;margin-bottom:36px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.8;">26 sandwiches, breakfast to sweets. Build your order and we'll get it ready.</p>
+    <a href="order.html" id="cta-btn" style="display:inline-block;background:linear-gradient(135deg,#3a5530,#2e3f25);color:#e8f0e0;text-decoration:none;border-radius:8px;padding:16px 52px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-family:'Lato',sans-serif;transition:opacity 0.2s;">Order now</a>
   </div>
 </section>
 
